@@ -1,0 +1,5 @@
+# rustc 1.88+ has a trait-coherence regression that breaks tauri-utils 2.9.2 /
+# cookie 0.18.1 (blanket `From` impls vs time's associated-type impls). time
+# 0.3.48's MSRV is 1.88, so we pin rustc 1.85 + an older time (see Cargo.lock).
+[toolchain]
+channel = "1.85.0"

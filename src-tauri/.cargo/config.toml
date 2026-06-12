@@ -1,0 +1,5 @@
+# Pick dependency versions compatible with this crate's rust-version (1.85),
+# avoiding transitive crates (time 0.3.48, serde_with 3.21) that bumped their
+# MSRV to 1.88 — the rustc release where the tauri-utils coherence bug appears.
+[resolver]
+incompatible-rust-versions = "fallback"

@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "IBM Plex Sans", system-ui, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+
+  /* Coggan-style 7-zone ramp (cool -> warm), athlete-recognisable */
+  --color-zone-recovery: #94a3b8;
+  --color-zone-endurance: #3b82f6;
+  --color-zone-tempo: #22c55e;
+  --color-zone-threshold: #f59e0b;
+  --color-zone-vo2: #f97316;
+  --color-zone-anaerobic: #ef4444;
+  --color-zone-neuro: #7c3aed;
+
+  /* physiological 3-zone */
+  --color-easy: #22c55e;
+  --color-moderate: #f59e0b;
+  --color-hard: #ef4444;
+
+  /* analytics accents */
+  --color-curve: #1e40af;
+  --color-point: #0c447c;
+  --color-hr: #db2777;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* tabular figures everywhere we show numbers */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
